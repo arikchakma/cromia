@@ -12,7 +12,7 @@
     "@astrojs/react": "^4.4.2",
     "@astrojs/vercel": "^9.0.4",
     "@tailwindcss/vite": "^4.2.1",
-    "astro": "^5.17.1",
+    "astro": "^5.18.0",
     "cromia": "workspace:*",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
