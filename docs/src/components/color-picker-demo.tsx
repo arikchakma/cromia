@@ -103,7 +103,7 @@ function CompletePicker() {
           />
           <ColorPicker.Input
             channel="hex-alpha"
-            className="w-full bg-transparent font-mono text-sm text-stone-500 uppercase outline-none focus:text-stone-700 data-[invalid]:text-red-400"
+            className="w-full bg-transparent font-mono text-sm text-stone-500 uppercase outline-none focus:text-stone-700 data-invalid:text-red-400"
           />
         </div>
 
@@ -145,7 +145,7 @@ function ChannelsPicker() {
       <SectionHeader
         number="02"
         title="Channels"
-        description="Individual H·S·B·A sliders with editable values."
+        description="Individual H·S·B·A editable sliders."
         color={color}
       />
 
@@ -180,7 +180,7 @@ function ChannelsPicker() {
           />
           <ColorPicker.Input
             channel="hex"
-            className="w-full bg-transparent font-mono text-[13px] text-stone-500 uppercase outline-none focus:text-stone-700 data-[invalid]:text-red-400"
+            className="w-full bg-transparent font-mono text-[13px] text-stone-500 uppercase outline-none focus:text-stone-700 data-invalid:text-red-400"
           />
         </div>
       </ColorPicker.Root>
@@ -223,7 +223,7 @@ function CompactPicker() {
           />
           <ColorPicker.Input
             channel="hex"
-            className="w-full bg-transparent font-mono text-[13px] text-stone-500 uppercase outline-none focus:text-stone-700 data-[invalid]:text-red-400"
+            className="w-full bg-transparent font-mono text-[13px] text-stone-500 uppercase outline-none focus:text-stone-700 data-invalid:text-red-400"
           />
         </div>
       </ColorPicker.Root>
@@ -245,7 +245,7 @@ export function ColorPickerExamples() {
               'linear-gradient(to right, #f87171, #fb923c, #facc15, #4ade80, #22d3ee, #60a5fa, #a78bfa)',
           }}
         />
-        <p className="mt-4 text-sm leading-relaxed text-stone-400">
+        <p className="mt-4 text-sm leading-relaxed text-balance text-stone-400">
           Headless color primitives for React. Compose any picker from the same
           building blocks — each example below uses identical components, styled
           differently.
@@ -257,7 +257,7 @@ export function ColorPickerExamples() {
         </div>
       </header>
 
-      <div className="grid items-start gap-14 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid items-start gap-10 md:grid-cols-2 lg:grid-cols-3">
         <CompletePicker />
         <ChannelsPicker />
         <CompactPicker />

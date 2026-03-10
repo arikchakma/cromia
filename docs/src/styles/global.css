@@ -1,26 +1,17 @@
 @import 'tailwindcss';
 
-@theme {
-  --font-body: system-ui, -apple-system, sans-serif;
-  --font-mono: ui-monospace, 'SFMono-Regular', monospace;
-  --font-serif: Georgia, 'Times New Roman', serif;
+html {
+  @apply overscroll-none;
+}
+
+body {
+  @apply font-sans antialiased;
 }
 
 @layer base {
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   html {
-    font-family: var(--font-body);
     color: #1c1917;
     background: #ffffff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
     scroll-padding-top: 50px;
   }
