@@ -1,12 +1,12 @@
 <div align="center">
-  <h2>🎨 Cromia</h2>
+  <h2>🎨 cromia</h2>
   <p>Headless, composable color picker primitives for React. Unstyled, accessible, and fully customizable.</p>
   <a href="https://npmjs.com/package/cromia"><strong>npm</strong></a>
 </div>
 
 ### What Does It Do?
 
-**Cromia** provides unstyled, composable color picker components for React. It handles all the color logic, keyboard interactions, and accessibility — you bring the styles.
+**cromia** provides unstyled, composable color picker components for React. It handles all the color logic, keyboard interactions, and accessibility — you bring the styles.
 
 ```tsx
 import { ColorPicker } from 'cromia';
@@ -56,7 +56,7 @@ function MyColorPicker() {
 
 ### Supported Color Formats
 
-Cromia accepts any of these as the `color` or `defaultColor` prop:
+cromia accepts any of these as the `color` or `defaultColor` prop:
 
 ```ts
 // Strings
@@ -81,7 +81,7 @@ Callbacks (`onColorChange`, `onColorCommitted`) always return hex strings.
 
 ### CSS Custom Properties
 
-Cromia exposes CSS custom properties for styling:
+cromia exposes CSS custom properties for styling:
 
 ```css
 /* On Root */
