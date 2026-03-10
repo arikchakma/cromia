@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { ColorPicker } from 'cromia';
+import { useState } from 'react';
 
 const SWATCHES = [
   '#ef4444',
