@@ -18,6 +18,6 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true
   },
-  "include": ["src"],
+  "include": ["src", "vitest.config.ts", "vitest.browser-setup.ts", "tsdown.config.ts"],
   "exclude": ["dist", "node_modules", "**/*.test.tsx", "**/*.test.ts"]
 }
