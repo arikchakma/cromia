@@ -6,5 +6,11 @@
     "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
     "curly": ["error", "all"]
   },
-  "ignorePatterns": ["coverage/", "coverage-merged/", "**/dist/", "**/node_modules/", "**/.vercel/"]
+  "ignorePatterns": [
+    "coverage/",
+    "coverage-merged/",
+    "**/dist/",
+    "**/node_modules/",
+    "**/.vercel/"
+  ]
 }
