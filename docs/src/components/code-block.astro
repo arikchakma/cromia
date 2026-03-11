@@ -75,7 +75,9 @@ const html = highlighter.codeToHtml(code.trim(), {
     btn.addEventListener('click', async () => {
       const block = btn.closest('.code-block');
       const code = block?.querySelector('.shiki code');
-      if (!code) return;
+      if (!code) {
+        return;
+      }
 
       await navigator.clipboard.writeText(code.textContent ?? '');
 
