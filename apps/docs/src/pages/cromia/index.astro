@@ -3,6 +3,8 @@ import Layout from '../../layouts/layout.astro';
 import { ColorPickerExamples } from '../../components/color-picker-demo';
 import CodeBlock from '../../components/code-block.astro';
 import GitHub from '../../icons/github.astro';
+import Copy from '../../icons/copy.astro';
+import Check from '../../icons/check.astro';
 
 const installCode = `npm install cromia`;
 
@@ -88,7 +90,13 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
         <h1 class="text-[15px] font-normal leading-relaxed text-black text-balance">
           <strong class="font-semibold">cromia</strong> — headless color picker primitives for React. Area selectors, channel sliders, hex inputs, and preset swatches. Compose any picker from the same building blocks.
         </h1>
-        <code class="mt-4 inline-block font-mono text-[13px] text-gray-400">npm install cromia</code>
+        <div class="install-block group mt-4 inline-flex items-center gap-3 border border-gray-200 px-3 py-2">
+          <code class="font-mono text-[13px]"><span class="text-gray-400">npm install</span> <span class="text-black">cromia</span></code>
+          <button class="install-copy-btn flex size-5 items-center justify-center text-gray-300 transition-colors hover:text-black" aria-label="Copy install command">
+            <Copy class="copy-icon size-3.5" />
+            <Check class="check-icon hidden size-3.5" />
+          </button>
+        </div>
       </header>
 
       <!-- Demos -->
@@ -153,3 +161,26 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
     </div>
   </div>
 </Layout>
+
+<script>
+  document.querySelectorAll('.install-copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const block = btn.closest('.install-block');
+      const code = block?.querySelector('code');
+      if (!code) return;
+
+      await navigator.clipboard.writeText(code.textContent?.trim() ?? '');
+
+      const copyIcon = btn.querySelector('.copy-icon') as HTMLElement;
+      const checkIcon = btn.querySelector('.check-icon') as HTMLElement;
+
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+
+      setTimeout(() => {
+        copyIcon.classList.remove('hidden');
+        checkIcon.classList.add('hidden');
+      }, 2000);
+    });
+  });
+</script>
