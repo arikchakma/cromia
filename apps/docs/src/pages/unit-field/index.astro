@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/layout.astro';
+import { UnitFieldExamples } from '../../components/unit-field-demo';
+import CodeBlock from '../../components/code-block.astro';
+import GitHub from '../../icons/github.astro';
+
+const installCode = `npm install unit-field`;
+
+const basicUsage = `import { UnitField } from 'unit-field';
+import { useState } from 'react';
+
+function WidthField() {
+  const [width, setWidth] = useState(100);
+
+  return (
+    <UnitField.Root
+      value={width}
+      onValueChange={setWidth}
+      min={0}
+      max={1000}
+      format={(v) => \`\${v}px\`}
+      parse={(v) => parseInt(v)}
+    >
+      <UnitField.DragArea>W</UnitField.DragArea>
+      <UnitField.Input aria-label="Width" />
+    </UnitField.Root>
+  );
+}`;
+
+const dragUsage = `<UnitField.Root
+  value={rotation}
+  onValueChange={setRotation}
+  min={-360}
+  max={360}
+  step={1}
+  largeStep={15}
+  format={(v) => \`\${v}\u00B0\`}
+  parse={(v) => parseInt(v)}
+>
+  <UnitField.DragArea sensitivity={2}>
+    Rotate
+  </UnitField.DragArea>
+  <UnitField.Input aria-label="Rotation" />
+</UnitField.Root>`;
+
+const committedUsage = `<UnitField.Root
+  value={fontSize}
+  onValueChange={setFontSize}
+  onValueCommitted={(v) => {
+    // Fires on Enter, blur, or drag end
+    saveFontSize(v);
+  }}
+  min={8}
+  max={120}
+  format={(v) => \`\${v}px\`}
+  parse={(v) => parseInt(v)}
+>
+  <UnitField.DragArea>Size</UnitField.DragArea>
+  <UnitField.Input aria-label="Font size" />
+</UnitField.Root>`;
+---
+
+<Layout
+  title="unit-field — Headless Numeric Input for React"
+  description="Headless numeric input field with drag-to-scrub and keyboard controls. Unstyled, accessible, and fully customizable."
+>
+  <div class="min-h-screen bg-white">
+    <div class="mx-auto max-w-2xl px-6 sm:px-8">
+
+      <!-- Nav -->
+      <nav class="flex items-center justify-between pt-8 pb-20 sm:pb-28">
+        <div class="flex items-center gap-2 font-mono text-[13px]">
+          <a href="/" class="text-gray-400 no-underline hover:no-underline hover:text-black">ui</a>
+          <span class="text-gray-300">/</span>
+          <a href="/unit-field" class="font-medium text-black no-underline hover:no-underline">unit-field</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://www.npmjs.com/package/unit-field" target="_blank" rel="noopener noreferrer" class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0v24h24V0H0zm19.2 19.2H12v-9.6H7.2v9.6H4.8V4.8h14.4v14.4z"/></svg>
+          </a>
+          <a href="https://github.com/arikchakma/ui" target="_blank" rel="noopener noreferrer" class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors">
+            <GitHub class="size-4" />
+          </a>
+        </div>
+      </nav>
+
+      <!-- Intro -->
+      <header>
+        <h1 class="text-[15px] font-normal leading-relaxed text-black text-balance">
+          <strong class="font-semibold">unit-field</strong> — headless numeric input for React. Drag-to-scrub, keyboard stepping, format and parse controls, committed value events. Build any numeric field.
+        </h1>
+        <code class="mt-4 inline-block font-mono text-[13px] text-gray-400">npm install unit-field</code>
+      </header>
+
+      <!-- Demos -->
+      <div class="mt-16 sm:mt-20">
+        <div class="flex items-center gap-3 mb-6">
+          <p class="font-mono text-[11px] uppercase tracking-[0.15em] text-gray-400">Examples</p>
+          <div class="h-px flex-1 bg-gray-200"></div>
+        </div>
+
+        <UnitFieldExamples client:load />
+      </div>
+
+      <!-- Usage -->
+      <div class="mt-16 sm:mt-20">
+        <div class="flex items-center gap-3 mb-6">
+          <p class="font-mono text-[11px] uppercase tracking-[0.15em] text-gray-400">Usage</p>
+          <div class="h-px flex-1 bg-gray-200"></div>
+        </div>
+
+        <div class="space-y-10">
+          <div>
+            <p class="text-[14px] font-medium text-black">Install</p>
+            <p class="mt-1 text-[13px] text-gray-500 text-balance">Add unit-field to your project. Works with any React 18+ or 19+ setup.</p>
+            <div class="mt-3">
+              <CodeBlock code={installCode} lang="bash" />
+            </div>
+          </div>
+
+          <div>
+            <p class="text-[14px] font-medium text-black">Basic field</p>
+            <p class="mt-1 text-[13px] text-gray-500 text-balance">Compose a numeric field with a draggable label and input. Format and parse control how values are displayed and read back.</p>
+            <div class="mt-3">
+              <CodeBlock code={basicUsage} lang="tsx" filename="unit-field.tsx" />
+            </div>
+          </div>
+
+          <div>
+            <p class="text-[14px] font-medium text-black">Drag to scrub</p>
+            <p class="mt-1 text-[13px] text-gray-500 text-balance">The drag area supports sensitivity control and Shift for large steps. Arrow keys, Home, End, Page Up/Down all work out of the box.</p>
+            <div class="mt-3">
+              <CodeBlock code={dragUsage} lang="tsx" filename="unit-field.tsx" />
+            </div>
+          </div>
+
+          <div>
+            <p class="text-[14px] font-medium text-black">Committed values</p>
+            <p class="mt-1 text-[13px] text-gray-500 text-balance">Use onValueCommitted to distinguish between live scrubbing updates and final committed values — perfect for undo history or saving state.</p>
+            <div class="mt-3">
+              <CodeBlock code={committedUsage} lang="tsx" filename="unit-field.tsx" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="py-12 sm:py-16">
+        <p class="text-[13px] text-gray-400">
+          by <a href="https://x.com/imarikchakma" target="_blank" rel="noopener noreferrer" class="text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-gray-500">Arik Chakma</a>
+        </p>
+      </footer>
+
+    </div>
+  </div>
+</Layout>
