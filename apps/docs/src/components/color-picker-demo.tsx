@@ -1,5 +1,6 @@
 import { ColorPicker } from 'cromia';
 import { useState } from 'react';
+import { SectionHeader } from './section-header';
 
 const SWATCHES = [
   '#ef4444',
@@ -23,44 +24,14 @@ const CHANNEL_NAMES: Record<(typeof CHANNELS)[number], string> = {
 };
 
 const THUMB =
-  'size-4.5 rounded-full border-2 border-white shadow-[0_0_0_1px_rgba(28,25,23,0.08),0_1px_3px_rgba(28,25,23,0.12)] bg-[var(--color-picker-thumb-color)]';
+  'size-4 border-2 border-white shadow-[0_0_0_1px_rgba(0,0,0,0.1)] bg-[var(--color-picker-thumb-color)]';
 
 const SWATCH =
-  'size-6 cursor-pointer rounded-lg shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] transition-transform hover:scale-110 data-[selected]:shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06),0_0_0_2px_#fff,0_0_0_3.5px_#57534e]';
+  'size-6 cursor-pointer shadow-[inset_0_0_0_1px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-80 data-[selected]:shadow-[inset_0_0_0_1px_rgba(0,0,0,0.08),0_0_0_2px_#fff,0_0_0_3px_#000]';
 
 const AREA_BG =
-  'overflow-hidden rounded-2xl bg-[linear-gradient(to_top,#000,transparent),linear-gradient(to_right,#fff,transparent)]';
+  'overflow-hidden bg-[linear-gradient(to_top,#000,transparent),linear-gradient(to_right,#fff,transparent)]';
 
-type SectionHeaderProps = {
-  number: string;
-  title: string;
-  description: string;
-  color: string;
-};
-
-function SectionHeader(props: SectionHeaderProps) {
-  const { number, title, description, color } = props;
-
-  return (
-    <header className="mb-6">
-      <p className="font-mono text-xs tracking-widest text-gray-300">
-        {number}
-      </p>
-      <div className="mt-1 flex items-center gap-2">
-        <h3 className="font-semibold tracking-[-0.01em] text-gray-800">
-          {title}
-        </h3>
-        <div
-          className="size-2 rounded-full ring-1 ring-black/6"
-          style={{ backgroundColor: color }}
-        />
-      </div>
-      <p className="mt-1 text-sm leading-relaxed text-gray-400">
-        {description}
-      </p>
-    </header>
-  );
-}
 
 function CompletePicker() {
   const [color, setColor] = useState('#3b82f6');
@@ -75,17 +46,17 @@ function CompletePicker() {
       />
 
       <ColorPicker.Root color={color} onColorChange={setColor}>
-        <ColorPicker.Area className="relative h-44 w-full cursor-crosshair rounded-2xl">
+        <ColorPicker.Area className="relative h-44 w-full cursor-crosshair">
           <ColorPicker.AreaBackground className={AREA_BG} />
           <ColorPicker.AreaThumb className={THUMB} />
         </ColorPicker.Area>
 
-        <div className="mt-3.5 space-y-2">
+        <div className="mt-3 space-y-2">
           <ColorPicker.ChannelSlider
             channel="hue"
             className="relative h-2.5 w-full"
           >
-            <ColorPicker.ChannelSliderTrack className="h-full w-full rounded-full" />
+            <ColorPicker.ChannelSliderTrack className="h-full w-full" />
             <ColorPicker.ChannelSliderThumb className={THUMB} />
           </ColorPicker.ChannelSlider>
 
@@ -93,23 +64,23 @@ function CompletePicker() {
             channel="alpha"
             className="relative h-2.5 w-full"
           >
-            <ColorPicker.ChannelSliderTrack className="h-full w-full rounded-full" />
+            <ColorPicker.ChannelSliderTrack className="h-full w-full" />
             <ColorPicker.ChannelSliderThumb className={THUMB} />
           </ColorPicker.ChannelSlider>
         </div>
 
-        <div className="mt-3.5 flex items-center gap-2.5 rounded-full bg-gray-100/70 px-2 py-2">
+        <div className="mt-3 flex items-center gap-2 border border-gray-200 px-2 py-1.5">
           <div
-            className="size-5 shrink-0 rounded-full"
+            className="size-4 shrink-0"
             style={{ backgroundColor: color }}
           />
           <ColorPicker.Input
             channel="hex-alpha"
-            className="w-full bg-transparent font-mono text-sm text-gray-500 uppercase outline-none focus:text-gray-700 data-invalid:text-red-400"
+            className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-black data-invalid:text-red-400"
           />
         </div>
 
-        <ColorPicker.SwatchGroup className="mt-3.5 flex flex-wrap gap-1.5">
+        <ColorPicker.SwatchGroup className="mt-3 flex flex-wrap gap-1">
           {SWATCHES.map((c) => (
             <ColorPicker.Swatch
               key={c}
@@ -121,15 +92,15 @@ function CompletePicker() {
           ))}
         </ColorPicker.SwatchGroup>
 
-        <div className="mt-3.5 flex items-center gap-3">
+        <div className="mt-3 flex items-center gap-3">
           {CHANNELS.map((ch) => (
             <div key={ch} className="flex items-center gap-1">
-              <span className="text-xs font-medium text-gray-300 uppercase">
+              <span className="text-[11px] font-medium text-gray-300 uppercase">
                 {ch[0]}
               </span>
               <ColorPicker.Input
                 channel={ch}
-                className="w-10 bg-transparent font-mono text-xs text-gray-500 tabular-nums transition-colors outline-none focus:text-gray-700"
+                className="w-10 bg-transparent font-mono text-[11px] text-gray-500 tabular-nums outline-none focus:text-black"
               />
             </div>
           ))}
@@ -161,28 +132,28 @@ function ChannelsPicker() {
                 </span>
                 <ColorPicker.Input
                   channel={ch}
-                  className="w-14 bg-transparent text-right font-mono text-[11px] text-gray-400 tabular-nums transition-colors outline-none focus:text-gray-700"
+                  className="w-14 bg-transparent text-right font-mono text-[11px] text-gray-400 tabular-nums outline-none focus:text-black"
                 />
               </div>
               <ColorPicker.ChannelSlider
                 channel={ch}
                 className="relative h-3 w-full"
               >
-                <ColorPicker.ChannelSliderTrack className="h-full w-full rounded-full" />
+                <ColorPicker.ChannelSliderTrack className="h-full w-full" />
                 <ColorPicker.ChannelSliderThumb className={THUMB} />
               </ColorPicker.ChannelSlider>
             </div>
           ))}
         </div>
 
-        <div className="mt-5 flex items-center gap-2.5 rounded-full bg-gray-100/70 px-2 py-2">
+        <div className="mt-4 flex items-center gap-2 border border-gray-200 px-2 py-1.5">
           <div
-            className="size-5 shrink-0 rounded-full"
+            className="size-4 shrink-0"
             style={{ backgroundColor: color }}
           />
           <ColorPicker.Input
             channel="hex"
-            className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-gray-700 data-invalid:text-red-400"
+            className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-black data-invalid:text-red-400"
           />
         </div>
       </ColorPicker.Root>
@@ -203,7 +174,7 @@ function CompactPicker() {
       />
 
       <ColorPicker.Root color={color} onColorChange={setColor}>
-        <ColorPicker.Area className="relative h-44 w-full cursor-crosshair rounded-2xl">
+        <ColorPicker.Area className="relative h-44 w-full cursor-crosshair">
           <ColorPicker.AreaBackground className={AREA_BG} />
           <ColorPicker.AreaThumb className={THUMB} />
         </ColorPicker.Area>
@@ -213,19 +184,74 @@ function CompactPicker() {
             channel="hue"
             className="relative h-[10px] w-full"
           >
-            <ColorPicker.ChannelSliderTrack className="h-full w-full rounded-full" />
+            <ColorPicker.ChannelSliderTrack className="h-full w-full" />
             <ColorPicker.ChannelSliderThumb className={THUMB} />
           </ColorPicker.ChannelSlider>
         </div>
 
-        <div className="mt-3.5 flex items-center gap-2.5 rounded-full bg-gray-100/70 px-2 py-2">
+        <div className="mt-3 flex items-center gap-2 border border-gray-200 px-2 py-1.5">
           <div
-            className="size-5 shrink-0 rounded-full"
+            className="size-4 shrink-0"
             style={{ backgroundColor: color }}
           />
           <ColorPicker.Input
             channel="hex"
-            className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-gray-700 data-invalid:text-red-400"
+            className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-black data-invalid:text-red-400"
+          />
+        </div>
+      </ColorPicker.Root>
+    </section>
+  );
+}
+
+function SwatchPicker() {
+  const [color, setColor] = useState('#22c55e');
+
+  return (
+    <section>
+      <SectionHeader
+        number="04"
+        title="Swatches"
+        description="Preset palette with hue fine-tuning."
+        color={color}
+      />
+
+      <ColorPicker.Root color={color} onColorChange={setColor}>
+        <div
+          className="h-20 w-full border border-gray-200"
+          style={{ backgroundColor: color }}
+        />
+
+        <div className="mt-3">
+          <ColorPicker.ChannelSlider
+            channel="hue"
+            className="relative h-2.5 w-full"
+          >
+            <ColorPicker.ChannelSliderTrack className="h-full w-full" />
+            <ColorPicker.ChannelSliderThumb className={THUMB} />
+          </ColorPicker.ChannelSlider>
+        </div>
+
+        <ColorPicker.SwatchGroup className="mt-3 flex flex-wrap gap-1">
+          {SWATCHES.map((c) => (
+            <ColorPicker.Swatch
+              key={c}
+              value={c}
+              selected={color === c}
+              onSelect={setColor}
+              className={SWATCH}
+            />
+          ))}
+        </ColorPicker.SwatchGroup>
+
+        <div className="mt-3 flex items-center gap-2 border border-gray-200 px-2 py-1.5">
+          <div
+            className="size-4 shrink-0"
+            style={{ backgroundColor: color }}
+          />
+          <ColorPicker.Input
+            channel="hex"
+            className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-black data-invalid:text-red-400"
           />
         </div>
       </ColorPicker.Root>
@@ -235,35 +261,11 @@ function CompactPicker() {
 
 export function ColorPickerExamples() {
   return (
-    <div>
-      <header className="mb-16 max-w-lg">
-        <h1 className="font-serif text-4xl font-light tracking-tight text-gray-800">
-          cromia
-        </h1>
-        <div
-          className="mt-3 h-[1.5px] w-20 rounded-full"
-          style={{
-            background:
-              'linear-gradient(to right, #f87171, #fb923c, #facc15, #4ade80, #22d3ee, #60a5fa, #a78bfa)',
-          }}
-        />
-        <p className="mt-4 text-sm leading-relaxed text-balance text-gray-400">
-          Headless color primitives for React. Compose any picker from the same
-          building blocks — each example below uses identical components, styled
-          differently.
-        </p>
-        <div className="mt-4 inline-flex items-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-2">
-          <code className="font-mono text-sm text-gray-500">
-            <span className="text-gray-300">$</span> npm install cromia
-          </code>
-        </div>
-      </header>
-
-      <div className="grid items-start gap-10 md:grid-cols-2 lg:grid-cols-3">
-        <CompletePicker />
-        <ChannelsPicker />
-        <CompactPicker />
-      </div>
+    <div className="grid items-start gap-10 sm:grid-cols-2">
+      <CompletePicker />
+      <ChannelsPicker />
+      <CompactPicker />
+      <SwatchPicker />
     </div>
   );
 }

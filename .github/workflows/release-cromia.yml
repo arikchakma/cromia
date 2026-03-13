@@ -1,9 +1,9 @@
-name: Publish Package
+name: Publish cromia
 
 on:
   push:
     tags:
-      - 'v*'
+      - 'cromia@v*'
 
 jobs:
   release:
@@ -14,4 +14,5 @@ jobs:
     with:
       publish: true
       build: pnpm run build
+      publish-directory: packages/cromia
     secrets: inherit

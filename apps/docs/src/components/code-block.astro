@@ -1,5 +1,5 @@
 ---
-import { createHighlighter } from 'shiki';
+import { getHighlighter } from '../lib/highlighter';
 import Copy from '../icons/copy.astro';
 import Check from '../icons/check.astro';
 
@@ -11,10 +11,7 @@ interface Props {
 
 const { code, lang = 'tsx', filename } = Astro.props;
 
-const highlighter = await createHighlighter({
-  themes: ['github-light-default'],
-  langs: ['tsx', 'bash'],
-});
+const highlighter = await getHighlighter();
 
 const lineCount = code.trim().split('\n').length;
 const gutterWidth = String(lineCount).length;
@@ -25,17 +22,17 @@ const html = highlighter.codeToHtml(code.trim(), {
 });
 ---
 
-<div class="code-block group relative overflow-hidden rounded-xl border border-gray-200" style={`--gutter-width: ${gutterWidth}ch;`}>
+<div class="code-block group relative overflow-hidden border border-gray-200" style={`--gutter-width: ${gutterWidth}ch;`}>
   {filename && (
-    <div class="flex items-center border-b border-gray-200 bg-gray-50/60 px-4 py-2">
-      <span class="font-mono text-xs text-gray-500">{filename}</span>
+    <div class="flex items-center border-b border-gray-200 px-4 py-2">
+      <span class="font-mono text-[12px] text-gray-400">{filename}</span>
     </div>
   )}
 
   <div class="relative">
     <div class="code-content overflow-x-auto" set:html={html} />
     <button
-      class="copy-btn absolute right-2 top-1.5 flex size-7 items-center justify-center rounded-md border border-gray-200 bg-white/80 text-gray-400 opacity-0 backdrop-blur-sm transition-all hover:text-gray-600 group-hover:opacity-100"
+      class="copy-btn absolute right-2 top-1.5 flex size-7 items-center justify-center border border-gray-200 bg-white text-gray-400 opacity-0 transition-all hover:text-black group-hover:opacity-100"
       aria-label="Copy code"
     >
       <Copy class="copy-icon size-3.5" />

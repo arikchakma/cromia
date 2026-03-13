@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/layout.astro';
+import GitHub from '../icons/github.astro';
+
+const packages = [
+  {
+    name: 'cromia',
+    tagline: 'Color picker primitives',
+    description: 'Area selectors, channel sliders, hex inputs, and preset swatches. Compose any color picker from the same building blocks.',
+    href: '/cromia',
+    install: 'npm i cromia',
+    version: '0.0.1',
+  },
+  {
+    name: 'unit-field',
+    tagline: 'Numeric input primitives',
+    description: 'Drag-to-scrub, keyboard stepping, format and parse controls, committed value events. Build any numeric field.',
+    href: '/unit-field',
+    install: 'npm i unit-field',
+    version: '0.0.1',
+  },
+];
+---
+
+<Layout>
+  <div class="min-h-screen bg-white">
+    <div class="mx-auto max-w-2xl px-6 sm:px-8">
+
+      <!-- Nav -->
+      <nav class="flex items-center justify-between pt-8 pb-20 sm:pb-28">
+        <a href="/" class="font-mono text-[13px] font-medium text-black no-underline hover:no-underline">ui</a>
+        <a href="https://github.com/arikchakma/ui" target="_blank" rel="noopener noreferrer" class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors">
+          <GitHub class="size-4" />
+        </a>
+      </nav>
+
+      <!-- Hero — tight, no fuss -->
+      <header>
+        <h1 class="text-[15px] font-normal leading-relaxed text-black text-balance">
+          <strong class="font-semibold">ui</strong> is a collection of headless React primitives. Unstyled, accessible, composable. Bring your own design system.
+        </h1>
+      </header>
+
+      <!-- Packages -->
+      <div class="mt-12 sm:mt-16">
+        {packages.map((pkg, i) => (
+          <a
+            href={pkg.href}
+            class="group block border-t border-gray-200 py-6 no-underline hover:no-underline sm:py-8"
+          >
+            <div class="sm:grid sm:grid-cols-[140px_1fr] sm:gap-8">
+              <div>
+                <h2 class="font-mono text-[14px] font-medium text-black">{pkg.name}</h2>
+                <p class="mt-1 font-mono text-[11px] text-gray-400">{pkg.version}</p>
+              </div>
+              <div>
+                <p class="mt-3 text-[14px] text-gray-500 sm:mt-0">{pkg.description}</p>
+                <code class="mt-3 inline-block font-mono text-[12px] text-gray-400 transition-colors group-hover:text-black">{pkg.install}</code>
+              </div>
+            </div>
+          </a>
+        ))}
+        <div class="border-t border-gray-200"></div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="py-12 sm:py-16">
+        <p class="text-[13px] text-gray-400">
+          by <a href="https://x.com/imarikchakma" target="_blank" rel="noopener noreferrer" class="text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-gray-500">Arik Chakma</a>
+        </p>
+      </footer>
+
+    </div>
+  </div>
+</Layout>
