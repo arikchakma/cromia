@@ -72,13 +72,13 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
       <!-- Nav -->
       <nav class="flex items-center justify-between pt-8 pb-20 sm:pb-28">
         <div class="flex items-center gap-2 font-mono text-[13px]">
-          <a href="/" class="text-gray-400 no-underline hover:no-underline hover:text-black">ui</a>
+          <a href="/" class="text-gray-400 no-underline hover:no-underline hover:text-black transition-colors">ui</a>
           <span class="text-gray-300">/</span>
           <a href="/cromia" class="font-medium text-black no-underline hover:no-underline">cromia</a>
         </div>
         <div class="flex items-center gap-4">
-          <a href="https://www.npmjs.com/package/cromia" target="_blank" rel="noopener noreferrer" class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0v24h24V0H0zm19.2 19.2H12v-9.6H7.2v9.6H4.8V4.8h14.4v14.4z"/></svg>
+          <a href="https://www.npmjs.com/package/cromia" target="_blank" rel="noopener noreferrer" class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors" aria-label="cromia on npm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0v24h24V0H0zm19.2 19.2H12v-9.6H7.2v9.6H4.8V4.8h14.4v14.4z"/></svg>
           </a>
           <a href="https://github.com/arikchakma/ui" target="_blank" rel="noopener noreferrer" class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors">
             <GitHub class="size-4" />
@@ -93,7 +93,7 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
         </h1>
         <div class="install-block group mt-4 inline-flex items-center gap-3 border border-gray-200 px-3 py-2">
           <code class="font-mono text-[13px]"><span class="text-gray-400">npm install</span> <span class="text-black">cromia</span></code>
-          <button class="install-copy-btn flex size-5 items-center justify-center text-gray-300 transition-colors hover:text-black" aria-label="Copy install command">
+          <button class="install-copy-btn flex size-5 items-center justify-center text-gray-300 transition-colors hover:text-black focus-visible:outline-none focus-visible:text-black" aria-label="Copy install command">
             <Copy class="copy-icon size-3.5" />
             <Check class="check-icon hidden size-3.5" />
           </button>
@@ -155,7 +155,7 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
       <!-- Footer -->
       <footer class="py-12 sm:py-16">
         <p class="text-[13px] text-gray-400">
-          by <a href="https://x.com/imarikchakma" target="_blank" rel="noopener noreferrer" class="text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-gray-500">Arik Chakma</a>
+          by <a href="https://x.com/imarikchakma" target="_blank" rel="noopener noreferrer" class="text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-gray-500 transition-colors">Arik Chakma</a>
         </p>
       </footer>
 

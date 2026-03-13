@@ -32,7 +32,7 @@ const html = highlighter.codeToHtml(code.trim(), {
   <div class="relative">
     <div class="code-content overflow-x-auto" set:html={html} />
     <button
-      class="copy-btn absolute right-2 top-1.5 flex size-7 items-center justify-center border border-gray-200 bg-white text-gray-400 opacity-0 transition-all hover:text-black group-hover:opacity-100"
+      class="copy-btn absolute right-2 top-1.5 flex size-7 items-center justify-center border border-gray-200 bg-white text-gray-400 opacity-0 transition-all hover:text-black group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-400"
       aria-label="Copy code"
     >
       <Copy class="copy-icon size-3.5" />

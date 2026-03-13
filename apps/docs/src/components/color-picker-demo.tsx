@@ -32,7 +32,6 @@ const SWATCH =
 const AREA_BG =
   'overflow-hidden bg-[linear-gradient(to_top,#000,transparent),linear-gradient(to_right,#fff,transparent)]';
 
-
 function CompletePicker() {
   const [color, setColor] = useState('#3b82f6');
 
