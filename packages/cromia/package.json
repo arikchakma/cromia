@@ -56,6 +56,7 @@
     "@base-ui/utils": "0.2.3",
     "@types/node": "^25.4.0",
     "@types/react": "^19.2.14",
+    "@ui/tsconfig": "workspace:*",
     "@vitejs/plugin-react": "^5.1.4",
     "@vitest/browser-playwright": "^4.0.18",
     "babel-plugin-react-compiler": "^1.0.0",
