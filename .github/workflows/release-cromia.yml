@@ -1,9 +1,9 @@
-name: Publish Package
+name: Publish cromia
 
 on:
   push:
     tags:
-      - 'v*'
+      - 'cromia@v*'
 
 jobs:
   release:

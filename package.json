@@ -9,6 +9,8 @@
     "format:write": "oxfmt",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix --fix-suggestions --fix-dangerously",
+    "release:cromia": "pnpm --filter cromia release",
+    "release:unit-field": "pnpm --filter unit-field release",
     "test": "turbo run test"
   },
   "devDependencies": {
