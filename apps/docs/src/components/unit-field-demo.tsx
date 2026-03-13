@@ -1,5 +1,6 @@
-import { UnitField } from 'unit-field';
 import { useCallback, useState } from 'react';
+import { UnitField } from 'unit-field';
+
 import { SectionHeader } from './section-header';
 
 const INPUT =
@@ -65,37 +66,85 @@ function PropertiesDemo() {
 
       <div className="space-y-1.5">
         <FieldRow label="Width">
-          <UnitField.Root className={ROOT} format={pxFormat} parse={pxParse} value={width} onValueChange={setWidth} min={0} max={1000}>
+          <UnitField.Root
+            className={ROOT}
+            format={pxFormat}
+            parse={pxParse}
+            value={width}
+            onValueChange={setWidth}
+            min={0}
+            max={1000}
+          >
             <UnitField.DragArea className={DRAG_AREA}>W</UnitField.DragArea>
             <UnitField.Input className={INPUT} />
           </UnitField.Root>
         </FieldRow>
         <FieldRow label="Height">
-          <UnitField.Root className={ROOT} format={pxFormat} parse={pxParse} value={height} onValueChange={setHeight} min={0} max={1000}>
+          <UnitField.Root
+            className={ROOT}
+            format={pxFormat}
+            parse={pxParse}
+            value={height}
+            onValueChange={setHeight}
+            min={0}
+            max={1000}
+          >
             <UnitField.DragArea className={DRAG_AREA}>H</UnitField.DragArea>
             <UnitField.Input className={INPUT} />
           </UnitField.Root>
         </FieldRow>
         <FieldRow label="Radius">
-          <UnitField.Root className={ROOT} format={pxFormat} parse={pxParse} value={radius} onValueChange={setRadius} min={0} max={999}>
+          <UnitField.Root
+            className={ROOT}
+            format={pxFormat}
+            parse={pxParse}
+            value={radius}
+            onValueChange={setRadius}
+            min={0}
+            max={999}
+          >
             <UnitField.DragArea className={DRAG_AREA}>R</UnitField.DragArea>
             <UnitField.Input className={INPUT} />
           </UnitField.Root>
         </FieldRow>
         <FieldRow label="Rotation">
-          <UnitField.Root className={ROOT} format={degFormat} parse={degParse} value={rotation} onValueChange={setRotation} min={0} max={360}>
+          <UnitField.Root
+            className={ROOT}
+            format={degFormat}
+            parse={degParse}
+            value={rotation}
+            onValueChange={setRotation}
+            min={0}
+            max={360}
+          >
             <UnitField.DragArea className={DRAG_AREA}>&deg;</UnitField.DragArea>
             <UnitField.Input className={INPUT} />
           </UnitField.Root>
         </FieldRow>
         <FieldRow label="Opacity">
-          <UnitField.Root className={ROOT} format={pctFormat} parse={pctParse} value={opacity} onValueChange={setOpacity} min={0} max={100}>
+          <UnitField.Root
+            className={ROOT}
+            format={pctFormat}
+            parse={pctParse}
+            value={opacity}
+            onValueChange={setOpacity}
+            min={0}
+            max={100}
+          >
             <UnitField.DragArea className={DRAG_AREA}>%</UnitField.DragArea>
             <UnitField.Input className={INPUT} />
           </UnitField.Root>
         </FieldRow>
         <FieldRow label="Border">
-          <UnitField.Root className={ROOT} format={pxFormat} parse={pxParse} value={border} onValueChange={setBorder} min={0} max={20}>
+          <UnitField.Root
+            className={ROOT}
+            format={pxFormat}
+            parse={pxParse}
+            value={border}
+            onValueChange={setBorder}
+            min={0}
+            max={20}
+          >
             <UnitField.DragArea className={DRAG_AREA}>B</UnitField.DragArea>
             <UnitField.Input className={INPUT} />
           </UnitField.Root>
@@ -137,19 +186,51 @@ function PaddingDemo() {
       />
 
       <div className="grid grid-cols-2 gap-2">
-        <UnitField.Root className={ROOT} format={pxFormat} parse={pxParse} value={top} onValueChange={setTop} min={0} max={100}>
+        <UnitField.Root
+          className={ROOT}
+          format={pxFormat}
+          parse={pxParse}
+          value={top}
+          onValueChange={setTop}
+          min={0}
+          max={100}
+        >
           <UnitField.DragArea className={DRAG_AREA}>T</UnitField.DragArea>
           <UnitField.Input className={INPUT} />
         </UnitField.Root>
-        <UnitField.Root className={ROOT} format={pxFormat} parse={pxParse} value={right} onValueChange={setRight} min={0} max={100}>
+        <UnitField.Root
+          className={ROOT}
+          format={pxFormat}
+          parse={pxParse}
+          value={right}
+          onValueChange={setRight}
+          min={0}
+          max={100}
+        >
           <UnitField.DragArea className={DRAG_AREA}>R</UnitField.DragArea>
           <UnitField.Input className={INPUT} />
         </UnitField.Root>
-        <UnitField.Root className={ROOT} format={pxFormat} parse={pxParse} value={bottom} onValueChange={setBottom} min={0} max={100}>
+        <UnitField.Root
+          className={ROOT}
+          format={pxFormat}
+          parse={pxParse}
+          value={bottom}
+          onValueChange={setBottom}
+          min={0}
+          max={100}
+        >
           <UnitField.DragArea className={DRAG_AREA}>B</UnitField.DragArea>
           <UnitField.Input className={INPUT} />
         </UnitField.Root>
-        <UnitField.Root className={ROOT} format={pxFormat} parse={pxParse} value={left} onValueChange={setLeft} min={0} max={100}>
+        <UnitField.Root
+          className={ROOT}
+          format={pxFormat}
+          parse={pxParse}
+          value={left}
+          onValueChange={setLeft}
+          min={0}
+          max={100}
+        >
           <UnitField.DragArea className={DRAG_AREA}>L</UnitField.DragArea>
           <UnitField.Input className={INPUT} />
         </UnitField.Root>
@@ -168,10 +249,18 @@ function PaddingDemo() {
           >
             <div className="h-10 w-24 bg-gray-800" />
           </div>
-          <span className="absolute top-1/2 left-1 -translate-y-1/2 font-mono text-[9px] text-gray-400">{left}</span>
-          <span className="absolute top-1/2 right-1 -translate-y-1/2 font-mono text-[9px] text-gray-400">{right}</span>
-          <span className="absolute top-1 left-1/2 -translate-x-1/2 font-mono text-[9px] text-gray-400">{top}</span>
-          <span className="absolute bottom-1 left-1/2 -translate-x-1/2 font-mono text-[9px] text-gray-400">{bottom}</span>
+          <span className="absolute top-1/2 left-1 -translate-y-1/2 font-mono text-[9px] text-gray-400">
+            {left}
+          </span>
+          <span className="absolute top-1/2 right-1 -translate-y-1/2 font-mono text-[9px] text-gray-400">
+            {right}
+          </span>
+          <span className="absolute top-1 left-1/2 -translate-x-1/2 font-mono text-[9px] text-gray-400">
+            {top}
+          </span>
+          <span className="absolute bottom-1 left-1/2 -translate-x-1/2 font-mono text-[9px] text-gray-400">
+            {bottom}
+          </span>
         </div>
       </div>
     </section>
@@ -211,11 +300,15 @@ function CommittedDemo() {
       <div className="mt-3 space-y-1.5">
         <div className="flex items-center justify-between border border-gray-200 px-3 py-2">
           <span className="text-[12px] text-gray-400">Live</span>
-          <span className="font-mono text-[13px] text-gray-600 tabular-nums">{value}%</span>
+          <span className="font-mono text-[13px] text-gray-600 tabular-nums">
+            {value}%
+          </span>
         </div>
         <div className="flex items-center justify-between border border-gray-200 px-3 py-2">
           <span className="text-[12px] text-gray-400">Committed</span>
-          <span className="font-mono text-[13px] text-gray-600 tabular-nums">{committed}%</span>
+          <span className="font-mono text-[13px] text-gray-600 tabular-nums">
+            {committed}%
+          </span>
         </div>
       </div>
 
@@ -244,13 +337,29 @@ function FontSizeDemo() {
 
       <div className="space-y-1.5">
         <FieldRow label="Size">
-          <UnitField.Root className={ROOT} format={pxFormat} parse={pxParse} value={fontSize} onValueChange={setFontSize} min={8} max={120}>
+          <UnitField.Root
+            className={ROOT}
+            format={pxFormat}
+            parse={pxParse}
+            value={fontSize}
+            onValueChange={setFontSize}
+            min={8}
+            max={120}
+          >
             <UnitField.DragArea className={DRAG_AREA}>Sz</UnitField.DragArea>
             <UnitField.Input className={INPUT} />
           </UnitField.Root>
         </FieldRow>
         <FieldRow label="Leading">
-          <UnitField.Root className={ROOT} format={pctFormat} parse={pctParse} value={lineHeight} onValueChange={setLineHeight} min={50} max={300}>
+          <UnitField.Root
+            className={ROOT}
+            format={pctFormat}
+            parse={pctParse}
+            value={lineHeight}
+            onValueChange={setLineHeight}
+            min={50}
+            max={300}
+          >
             <UnitField.DragArea className={DRAG_AREA}>Ld</UnitField.DragArea>
             <UnitField.Input className={INPUT} />
           </UnitField.Root>
@@ -259,7 +368,10 @@ function FontSizeDemo() {
           <UnitField.Root
             className={ROOT}
             format={pxFormat}
-            parse={(v) => { const n = parseFloat(v.replace('px', '')); return isNaN(n) ? null : n; }}
+            parse={(v) => {
+              const n = parseFloat(v.replace('px', ''));
+              return isNaN(n) ? null : n;
+            }}
             value={letterSpacing}
             onValueChange={setLetterSpacing}
             min={-10}

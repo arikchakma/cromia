@@ -14,10 +14,10 @@
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.18.0",
     "cromia": "workspace:*",
-    "unit-field": "workspace:*",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "shiki": "^4.0.2",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.1",
+    "unit-field": "workspace:*"
   }
 }

@@ -14,10 +14,7 @@ export function SectionHeader(props: SectionHeaderProps) {
         <span className="font-mono text-[11px] text-gray-400">{number}</span>
         <h3 className="text-[14px] font-medium text-black">{title}</h3>
         {color && (
-          <div
-            className="size-2 shrink-0"
-            style={{ backgroundColor: color }}
-          />
+          <div className="size-2 shrink-0" style={{ backgroundColor: color }} />
         )}
       </div>
       <p className="mt-1 text-[13px] text-gray-500">{description}</p>

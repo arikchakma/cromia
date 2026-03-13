@@ -68,19 +68,47 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
 >
   <div class="min-h-screen bg-white">
     <div class="mx-auto max-w-2xl px-6 sm:px-8">
-
       <!-- Nav -->
       <nav class="flex items-center justify-between pt-8 pb-20 sm:pb-28">
         <div class="flex items-center gap-2 font-mono text-[13px]">
-          <a href="/" class="text-gray-400 no-underline hover:no-underline hover:text-black transition-colors">ui</a>
+          <a
+            href="/"
+            class="text-gray-400 no-underline hover:no-underline hover:text-black transition-colors"
+            >ui</a
+          >
           <span class="text-gray-300">/</span>
-          <a href="/cromia" class="font-medium text-black no-underline hover:no-underline">cromia</a>
+          <a
+            href="/cromia"
+            class="font-medium text-black no-underline hover:no-underline"
+            >cromia</a
+          >
         </div>
         <div class="flex items-center gap-4">
-          <a href="https://www.npmjs.com/package/cromia" target="_blank" rel="noopener noreferrer" class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors" aria-label="cromia on npm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0v24h24V0H0zm19.2 19.2H12v-9.6H7.2v9.6H4.8V4.8h14.4v14.4z"/></svg>
+          <a
+            href="https://www.npmjs.com/package/cromia"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors"
+            aria-label="cromia on npm"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              ><path
+                d="M0 0v24h24V0H0zm19.2 19.2H12v-9.6H7.2v9.6H4.8V4.8h14.4v14.4z"
+              ></path></svg
+            >
           </a>
-          <a href="https://github.com/arikchakma/ui" target="_blank" rel="noopener noreferrer" class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors">
+          <a
+            href="https://github.com/arikchakma/ui"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-300 no-underline hover:no-underline hover:text-black transition-colors"
+          >
             <GitHub class="size-4" />
           </a>
         </div>
@@ -88,12 +116,24 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
 
       <!-- Intro -->
       <header>
-        <h1 class="text-[15px] font-normal leading-relaxed text-black text-balance">
-          <strong class="font-semibold">cromia</strong> — headless color picker primitives for React. Area selectors, channel sliders, hex inputs, and preset swatches. Compose any picker from the same building blocks.
+        <h1
+          class="text-[15px] font-normal leading-relaxed text-black text-balance"
+        >
+          <strong class="font-semibold">cromia</strong> — headless color picker primitives
+          for React. Area selectors, channel sliders, hex inputs, and preset swatches.
+          Compose any picker from the same building blocks.
         </h1>
-        <div class="install-block group mt-4 inline-flex items-center gap-3 border border-gray-200 px-3 py-2">
-          <code class="font-mono text-[13px]"><span class="text-gray-400">npm install</span> <span class="text-black">cromia</span></code>
-          <button class="install-copy-btn flex size-5 items-center justify-center text-gray-300 transition-colors hover:text-black focus-visible:outline-none focus-visible:text-black" aria-label="Copy install command">
+        <div
+          class="install-block group mt-4 inline-flex items-center gap-3 border border-gray-200 px-3 py-2"
+        >
+          <code class="font-mono text-[13px]"
+            ><span class="text-gray-400">npm install</span>
+            <span class="text-black">cromia</span></code
+          >
+          <button
+            class="install-copy-btn flex size-5 items-center justify-center text-gray-300 transition-colors hover:text-black focus-visible:outline-none focus-visible:text-black"
+            aria-label="Copy install command"
+          >
             <Copy class="copy-icon size-3.5" />
             <Check class="check-icon hidden size-3.5" />
           </button>
@@ -103,7 +143,11 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
       <!-- Demos -->
       <div class="mt-16 sm:mt-20">
         <div class="flex items-center gap-3 mb-6">
-          <p class="font-mono text-[11px] uppercase tracking-[0.15em] text-gray-400">Examples</p>
+          <p
+            class="font-mono text-[11px] uppercase tracking-[0.15em] text-gray-400"
+          >
+            Examples
+          </p>
           <div class="h-px flex-1 bg-gray-200"></div>
         </div>
 
@@ -113,14 +157,20 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
       <!-- Usage -->
       <div class="mt-16 sm:mt-20">
         <div class="flex items-center gap-3 mb-6">
-          <p class="font-mono text-[11px] uppercase tracking-[0.15em] text-gray-400">Usage</p>
+          <p
+            class="font-mono text-[11px] uppercase tracking-[0.15em] text-gray-400"
+          >
+            Usage
+          </p>
           <div class="h-px flex-1 bg-gray-200"></div>
         </div>
 
         <div class="space-y-10">
           <div>
             <p class="text-[14px] font-medium text-black">Install</p>
-            <p class="mt-1 text-[13px] text-gray-500 text-balance">Add cromia to your project. Works with any React 18+ or 19+ setup.</p>
+            <p class="mt-1 text-[13px] text-gray-500 text-balance">
+              Add cromia to your project. Works with any React 18+ or 19+ setup.
+            </p>
             <div class="mt-3">
               <CodeBlock code={installCode} lang="bash" />
             </div>
@@ -128,25 +178,46 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
 
           <div>
             <p class="text-[14px] font-medium text-black">Basic picker</p>
-            <p class="mt-1 text-[13px] text-gray-500 text-balance">Compose a minimal picker with an area selector, hue slider, and hex input.</p>
+            <p class="mt-1 text-[13px] text-gray-500 text-balance">
+              Compose a minimal picker with an area selector, hue slider, and
+              hex input.
+            </p>
             <div class="mt-3">
-              <CodeBlock code={basicUsage} lang="tsx" filename="color-picker.tsx" />
+              <CodeBlock
+                code={basicUsage}
+                lang="tsx"
+                filename="color-picker.tsx"
+              />
             </div>
           </div>
 
           <div>
             <p class="text-[14px] font-medium text-black">Color swatches</p>
-            <p class="mt-1 text-[13px] text-gray-500 text-balance">Add preset color swatches so users can quickly pick from a curated palette.</p>
+            <p class="mt-1 text-[13px] text-gray-500 text-balance">
+              Add preset color swatches so users can quickly pick from a curated
+              palette.
+            </p>
             <div class="mt-3">
-              <CodeBlock code={swatchesUsage} lang="tsx" filename="color-picker.tsx" />
+              <CodeBlock
+                code={swatchesUsage}
+                lang="tsx"
+                filename="color-picker.tsx"
+              />
             </div>
           </div>
 
           <div>
             <p class="text-[14px] font-medium text-black">Channel sliders</p>
-            <p class="mt-1 text-[13px] text-gray-500 text-balance">Expose individual hue, saturation, brightness, and alpha channels as editable sliders.</p>
+            <p class="mt-1 text-[13px] text-gray-500 text-balance">
+              Expose individual hue, saturation, brightness, and alpha channels
+              as editable sliders.
+            </p>
             <div class="mt-3">
-              <CodeBlock code={channelsUsage} lang="tsx" filename="color-picker.tsx" />
+              <CodeBlock
+                code={channelsUsage}
+                lang="tsx"
+                filename="color-picker.tsx"
+              />
             </div>
           </div>
         </div>
@@ -155,10 +226,15 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
       <!-- Footer -->
       <footer class="py-12 sm:py-16">
         <p class="text-[13px] text-gray-400">
-          by <a href="https://x.com/imarikchakma" target="_blank" rel="noopener noreferrer" class="text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-gray-500 transition-colors">Arik Chakma</a>
+          by <a
+            href="https://x.com/imarikchakma"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-gray-500 transition-colors"
+            >Arik Chakma</a
+          >
         </p>
       </footer>
-
     </div>
   </div>
 </Layout>
@@ -168,7 +244,9 @@ const channelsUsage = `const channels = ['hue', 'saturation', 'brightness', 'alp
     btn.addEventListener('click', async () => {
       const block = btn.closest('.install-block');
       const code = block?.querySelector('code');
-      if (!code) return;
+      if (!code) {
+        return;
+      }
 
       await navigator.clipboard.writeText(code.textContent?.trim() ?? '');
 

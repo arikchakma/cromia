@@ -38,18 +38,18 @@ function MyColorPicker() {
 
 ### Components
 
-| Component | Description |
-| --- | --- |
-| `Root` | Provider that manages color state. Accepts `color`, `defaultColor`, `onColorChange`, `onColorCommitted`, and `disabled`. |
-| `Area` | 2D picker for saturation (x-axis) and brightness (y-axis). |
-| `AreaBackground` | Renders the hue-based gradient background for `Area`. |
-| `AreaThumb` | Draggable thumb for `Area`. |
-| `ChannelSlider` | 1D slider for a single channel: `hue`, `saturation`, `brightness`, or `alpha`. Supports `horizontal` and `vertical` orientation. |
-| `ChannelSliderTrack` | Renders the gradient track for `ChannelSlider`. |
-| `ChannelSliderThumb` | Draggable thumb for `ChannelSlider`. |
-| `Input` | Text input bound to a channel (`hex`, `hex-alpha`, `hue`, `saturation`, `brightness`, `alpha`). |
-| `Swatch` | Color swatch button. Accepts `value`, `selected`, and `onSelect`. |
-| `SwatchGroup` | Container for swatches with `radiogroup` role. |
+| Component            | Description                                                                                                                      |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `Root`               | Provider that manages color state. Accepts `color`, `defaultColor`, `onColorChange`, `onColorCommitted`, and `disabled`.         |
+| `Area`               | 2D picker for saturation (x-axis) and brightness (y-axis).                                                                       |
+| `AreaBackground`     | Renders the hue-based gradient background for `Area`.                                                                            |
+| `AreaThumb`          | Draggable thumb for `Area`.                                                                                                      |
+| `ChannelSlider`      | 1D slider for a single channel: `hue`, `saturation`, `brightness`, or `alpha`. Supports `horizontal` and `vertical` orientation. |
+| `ChannelSliderTrack` | Renders the gradient track for `ChannelSlider`.                                                                                  |
+| `ChannelSliderThumb` | Draggable thumb for `ChannelSlider`.                                                                                             |
+| `Input`              | Text input bound to a channel (`hex`, `hex-alpha`, `hue`, `saturation`, `brightness`, `alpha`).                                  |
+| `Swatch`             | Color swatch button. Accepts `value`, `selected`, and `onSelect`.                                                                |
+| `SwatchGroup`        | Container for swatches with `radiogroup` role.                                                                                   |
 
 ### Supported Color Formats
 

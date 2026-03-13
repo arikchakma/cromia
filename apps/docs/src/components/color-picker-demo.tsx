@@ -1,5 +1,6 @@
 import { ColorPicker } from 'cromia';
 import { useState } from 'react';
+
 import { SectionHeader } from './section-header';
 
 const SWATCHES = [
@@ -69,10 +70,7 @@ function CompletePicker() {
         </div>
 
         <div className="mt-3 flex items-center gap-2 border border-gray-200 px-2 py-1.5">
-          <div
-            className="size-4 shrink-0"
-            style={{ backgroundColor: color }}
-          />
+          <div className="size-4 shrink-0" style={{ backgroundColor: color }} />
           <ColorPicker.Input
             channel="hex-alpha"
             className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-black data-invalid:text-red-400"
@@ -146,10 +144,7 @@ function ChannelsPicker() {
         </div>
 
         <div className="mt-4 flex items-center gap-2 border border-gray-200 px-2 py-1.5">
-          <div
-            className="size-4 shrink-0"
-            style={{ backgroundColor: color }}
-          />
+          <div className="size-4 shrink-0" style={{ backgroundColor: color }} />
           <ColorPicker.Input
             channel="hex"
             className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-black data-invalid:text-red-400"
@@ -189,10 +184,7 @@ function CompactPicker() {
         </div>
 
         <div className="mt-3 flex items-center gap-2 border border-gray-200 px-2 py-1.5">
-          <div
-            className="size-4 shrink-0"
-            style={{ backgroundColor: color }}
-          />
+          <div className="size-4 shrink-0" style={{ backgroundColor: color }} />
           <ColorPicker.Input
             channel="hex"
             className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-black data-invalid:text-red-400"
@@ -244,10 +236,7 @@ function SwatchPicker() {
         </ColorPicker.SwatchGroup>
 
         <div className="mt-3 flex items-center gap-2 border border-gray-200 px-2 py-1.5">
-          <div
-            className="size-4 shrink-0"
-            style={{ backgroundColor: color }}
-          />
+          <div className="size-4 shrink-0" style={{ backgroundColor: color }} />
           <ColorPicker.Input
             channel="hex"
             className="w-full bg-transparent font-mono text-[13px] text-gray-500 uppercase outline-none focus:text-black data-invalid:text-red-400"
